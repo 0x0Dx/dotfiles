@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Compiled
+*.pyc
+__pycache__/
+node_modules/
+dist/
+build/
