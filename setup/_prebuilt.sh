@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
-# --------------------------------------------------------------
-# Prebuilt Packages
-# --------------------------------------------------------------
+set -e
 
-echo "Installing Matugen v2.4.1 into ~/.local/bin"
-# https://github.com/InioX/matugen/releases
-cp $SCRIPT_DIR/packages/matugen $HOME/.local/bin
+MATUGEN_VERSION="v2.4.1"
+INSTALL_DIR="$HOME/.local/bin"
+URL="https://github.com/InioX/matugen/releases/download/${MATUGEN_VERSION}/matugen"
+
+echo "Installing Matugen ${MATUGEN_VERSION} into ${INSTALL_DIR}"
+
+mkdir -p "$INSTALL_DIR"
+curl -L -o "$INSTALL_DIR/matugen" "$URL"
+chmod +x "$INSTALL_DIR/matugen"
+
+echo "Matugen ${MATUGEN_VERSION} installed successfully!"

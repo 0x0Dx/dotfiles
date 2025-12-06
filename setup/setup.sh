@@ -80,3 +80,15 @@ elif [[ $(_checkCommandExists "zypper") == 0 ]]; then
 else
     $SCRIPT_DIR/dependencies.sh
 fi
+
+DOTFILES_REPO="https://github.com/0x0Dx/dotfiles.git"
+TMP_DIR=$(mktemp -d)
+
+echo ":: Fetching dotfiles from $DOTFILES_REPO ..."
+git clone --depth 1 "$DOTFILES_REPO" "$TMP_DIR"
+
+echo ":: Copying files to home directory ..."
+cp -rf "$TMP_DIR/dotfiles/." "$HOME/"
+rm -rf "$TMP_DIR"
+
+echo ":: Dotfiles installation complete!"
