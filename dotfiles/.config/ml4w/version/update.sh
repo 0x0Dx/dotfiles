@@ -14,7 +14,6 @@ get_latest_release() {
 
 # Check for internet connection
 if ping -q -c 1 -W 1 google.com >/dev/null; then
-
     version=$(cat ~/.config/ml4w/version/name)
     online=$(get_latest_release "mylinuxforwork/hyprland-dotfiles")
     echo $version "<" $online
