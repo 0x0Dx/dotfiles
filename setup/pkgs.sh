@@ -36,7 +36,7 @@ apps=(
 
 tools=(
     "xdg-user-dirs"    
-    "xdg-desktop-portal-gtk"    
+    "xdg-desktop-portal-gtk"
     "figlet"
     "fastfetch"
     "htop"

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-echo ":: Installing the ML4W Apps"
+echo ":: Installing the 0x0D Apps"
 
 flatpak update
