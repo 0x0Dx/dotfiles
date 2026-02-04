@@ -22,8 +22,8 @@ esac
 case "${SKIP_QUICKSHELL}" in
   true) sleep 0;;
   *)
-     # Should overwriting the whole directory not only ~/.config/quickshell/ii/ cuz https://github.com/end-4/dots-hyprland/issues/2294#issuecomment-3448671064
-    install_dir__sync quickshell "$XDG_CONFIG_HOME"/quickshell
+     # Should overwriting the whole directory not only ~/.config/quickshell/daifuku/ cuz https://github.com/end-4/dots-hyprland/issues/2294#issuecomment-3448671064
+    install_dir__sync quickshell "$XDG_CONFIG_HOME"/quickshell/daifuku
     ;;
 esac
 
