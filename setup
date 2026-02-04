@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 REPO_ROOT="$(pwd)"
 
 source ./scripts/install/lib/envs.sh
-source ./sdata/lib/functions.sh
+source ./scripts/install/lib/funcs.sh
 source ./sdata/lib/package-installers.sh
 source ./sdata/lib/dist-determine.sh
 

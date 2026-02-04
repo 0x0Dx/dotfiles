@@ -1,9 +1,28 @@
-# This is NOT a script for execution, but for loading functions, so NOT need execution permission or shebang.
-# NOTE that you NOT need to `cd ..' because the `$0' is NOT this file, but the script file which will source this file.
+# shellcheck disable=SC2148
 
-# shellcheck shell=bash
+declare -g SUDO_KEEPALIVE_PID=""
+declare -ga TEMP_FILES_TO_CLEANUP=()
 
-function try { "$@" || sleep 0; }
+function try {
+  "$@" || sleep 0
+}
+
+function pause(){
+  if [ ! "${ask:-true}" == "false" ];then
+    printf "${STY_FAINT}${STY_SLANT}"
+    local p
+    read -p "(Ctrl-C to abort, Enter to proceed)" p
+    printf "${STY_RST}"
+  fi
+}
+
+function log_info() { echo -e "${STY_BLUE}[INFO]${STY_RST} $1"; }
+function log_success() { echo -e "${STY_GREEN}[SUCCESS]${STY_RST} $1"; }
+function log_warning() { echo -e "${STY_YELLOW}[WARNING]${STY_RST} $1"; }
+function log_error() { echo -e "${STY_RED}[ERROR]${STY_RST} $1" >&2; }
+function log_header() { echo -e "\n${STY_PURPLE}=== $1 ===${STY_RST}"; }
+function log_die() { log_error "$1"; exit 1; }
+
 function v(){
   echo -e "####################################################"
   echo -e "${STY_BLUE}[$0]: Next command:${STY_RST}"
@@ -61,13 +80,6 @@ function showfun(){
   type -a "$1" 2>/dev/null || return 1
   printf "${STY_RST}"
 }
-function pause(){
-  if [ ! "$ask" == "false" ];then
-    printf "${STY_FAINT}${STY_SLANT}"
-    local p; read -p "(Ctrl-C to abort, Enter to proceed)" p
-    printf "${STY_RST}"
-  fi
-}
 function remove_bashcomments_emptylines(){
   echo "pwd=$(pwd)"
   echo "input=$1"
@@ -80,10 +92,6 @@ function prevent_sudo_or_root(){
     root) echo -e "${STY_RED}[$0]: This script is NOT to be executed with sudo or as root. Aborting...${STY_RST}";exit 1;;
   esac
 }
-
-# Initialize sudo session and keep it alive in background
-# Store PID in a global variable that can be accessed by trap
-declare -g SUDO_KEEPALIVE_PID=""
 
 function sudo_init_keepalive(){
   # Check if sudo is available
@@ -139,26 +147,6 @@ function latest_commit_timestamp(){
     return 1
   fi
   echo "$result"
-}
-
-function log_info() {
-  echo -e "${STY_BLUE}[INFO]${STY_RST} $1"
-}
-function log_success() {
-  echo -e "${STY_GREEN}[SUCCESS]${STY_RST} $1"
-}
-function log_warning() {
-  echo -e "${STY_YELLOW}[WARNING]${STY_RST} $1"
-}
-function log_error() {
-  echo -e "${STY_RED}[ERROR]${STY_RST} $1" >&2
-}
-function log_header() {
-  echo -e "\n${STY_PURPLE}=== $1 ===${STY_RST}"
-}
-function log_die() {
-  log_error "$1"
-  exit 1
 }
 
 # Enhanced: Check if command exists
@@ -298,8 +286,6 @@ function show_progress() {
 }
 
 
-# Enhanced: Cleanup temporary files on exit
-#declare -a TEMP_FILES_TO_CLEANUP=()
 function register_temp_file() {
   local temp_file="$1"
   TEMP_FILES_TO_CLEANUP+=("$temp_file")
