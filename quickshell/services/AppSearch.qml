@@ -41,27 +41,26 @@ Singleton {
         }
     ]
 
-    // Deduped list to fix double icons
     readonly property list<DesktopEntry> list: Array.from(DesktopEntries.applications.values)
-        .filter((app, index, self) => 
-            index === self.findIndex((t) => (
-                t.id === app.id
-            ))
+      .filter((app, index, self) => 
+        index === self.findIndex((t) => (
+          t.id === app.id
+        ))
     )
     
     readonly property var preppedNames: list.map(a => ({
-        name: Fuzzy.prepare(`${a.name} `),
-        entry: a
+      name: Fuzzy.prepare(`${a.name} `),
+      entry: a
     }))
 
     readonly property var preppedIcons: list.map(a => ({
-        name: Fuzzy.prepare(`${a.icon} `),
-        entry: a
+      name: Fuzzy.prepare(`${a.icon} `),
+      entry: a
     }))
 
     function getInitials(name: string): string {
       const words = name.split(/[\s\-_]+/)
-      returns words.map(w => w.charAt(0).toLowerCase()).join('')
+      return words.map(w => w.charAt(0).toLowerCase()).join('')
     }
 
     function isPrefixMatch(name: string, search: string): bool {
