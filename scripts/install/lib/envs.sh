@@ -28,6 +28,6 @@ declare -a TEMP_FILES_TO_CLEANUP=()
 BACKUP_DIR="${BACKUP_DIR:-$HOME/daifuku-backup}"
 DOTS_CORE_CONFDIR="${XDG_CONFIG_HOME}/daifuku"
 cp -r "${XDG_CONFIG_HOME}/illogical-impulse/." "$DOTS_CORE_CONFDIR"
-ln -sf "${XDG_CONFIG_HOME}/illogical-impulse" "$DOTS_CORE_CONFDIR"
+ln -sf "${XDG_CONFIG_HOME}/illogical-impulse/" "$DOTS_CORE_CONFDIR"
 INSTALLED_LISTFILE="${DOTS_CORE_CONFDIR}/installed_listfile"
 FIRSTRUN_FILE="${DOTS_CORE_CONFDIR}/installed_true"

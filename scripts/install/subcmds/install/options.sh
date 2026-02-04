@@ -26,7 +26,7 @@ Options for install:
                             Quickshell, Fish and Hyprland
       --core                Alias of --skip-{plasmaintg,fish,miscconf,fontconfig}
       --fontset <set>       Use a set of pre-defined font and config (currently only fontconfig).
-                            Possible values of <set>: $(ls -A ${REPO_ROOT}/dots-extra/fontsets)
+                            Possible values of <set>: $(ls -A ${REPO_ROOT}/dots/extra/fontsets)
 ${STY_CYAN}
 New features (experimental):
       --exp-files             Use yaml-based config for the third step copying files.
@@ -91,7 +91,7 @@ while true ; do
     
     ## Ones with parameter
     --fontset)
-    if [[ -d "${REPO_ROOT}/dots-extra/fontsets/$2" ]];
+    if [[ -d "${REPO_ROOT}/dots/extra/fontsets/$2" ]];
       then echo "Using fontset \"$2\".";FONTSET_DIR_NAME="$2";shift 2
       else echo "Wrong argument for $1.";exit 1
     fi;;
