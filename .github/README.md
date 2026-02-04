@@ -75,8 +75,6 @@ Widget system: Quickshell | Support: Yes
 | Window management | Built with love |
 | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a7e6d29c-e82c-4934-98db-36c810ec999b" /> | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1b806b53-9310-4c63-84a9-cec9e311d439" /> |
 
-### Other styles: Available at the end of the readme.
-
 <div align="center">
   <h2>• thank you •</h2>
   <h3></h3>
