@@ -6,7 +6,7 @@
 
 # Translations
 
-See `dots/.config/quickshell/ii/translations/tools`
+See `quickshell/translations/tools`
 
 # Code
 
