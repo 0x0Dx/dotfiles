@@ -22,7 +22,6 @@ Options for install:
       --skip-hyprland       Skip installing the config for Hyprland
       --skip-fish           Skip installing the config for Fish
       --skip-fontconfig     Skip installing the config for fontconfig
-      --skip-scripts        Skip installing the scripts
       --skip-miscconf       Skip copying the dirs and files to \".configs\" except for
                             Quickshell, Fish and Hyprland
       --core                Alias of --skip-{plasmaintg,fish,miscconf,fontconfig}
@@ -85,7 +84,6 @@ while true ; do
     --skip-fish) SKIP_FISH=true;shift;;
     --skip-quickshell) SKIP_QUICKSHELL=true;shift;;
     --skip-fontconfig) SKIP_FONTCONFIG=true;shift;;
-    --skip-scripts) SKIP_SCRIPTS=true;shift;;
     --skip-miscconf) SKIP_MISCCONF=true;shift;;
     --core) SKIP_PLASMAINTG=true;SKIP_FISH=true;SKIP_FONTCONFIG=true;SKIP_MISCCONF=true;shift;;
     --exp-files) EXPERIMENTAL_FILES_SCRIPT=true;shift;;

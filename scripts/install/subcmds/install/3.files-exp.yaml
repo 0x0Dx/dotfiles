@@ -16,9 +16,6 @@ patterns:
   - from: "quickshell"
     to: "$XDG_CONFIG_HOME/quickshell/daifuku"
     mode: "sync"
-  - from: "scripts/bin"
-    to: "/usr/local/bin"
-    mode: "sync"
   # Conditionally install these files
   - from: "dots/.config/fish"
     to: "$XDG_CONFIG_HOME/fish"
