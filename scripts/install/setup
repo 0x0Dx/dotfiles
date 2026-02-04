@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "$0")"
-REPO_ROOT="$(pwd)/../../"
+REPO_ROOT="$(pwd)"
 
-source ./scripts/install/lib/envs.sh
-source ./scripts/install/lib/funcs.sh
-source ./scripts/install/lib/pkg-installer.sh
-source ./scripts/install/lib/dist-detect.sh
+source ./lib/envs.sh
+source ./lib/funcs.sh
+source ./lib/pkg-installer.sh
+source ./lib/dist-detect.sh
 
 prevent_sudo_or_root
 set -e
