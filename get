@@ -134,7 +134,8 @@ if [ -z "$(ls -A)" ]; then
   x git init -b master
   x git remote add origin https://github.com/$remote_repo
 fi
-git remote get-url origin|grep -q $remote_repo || { echo "Dir \"$local_path\" is not empty, nor a git repo of $remote_repo. Aborting..."; exit 1 ; }
+ git remote get-url origin|grep -q $remote_repo || { echo "Dir \"$local_path\" is not empty, nor a git repo of $remote_repo. Aborting..."; exit 1 ; }
+ git branch -m main master 2>/dev/null || true
  x git pull origin master && git submodule update --init --recursive
  x git branch --set-upstream-to=origin/master master
 echo "$me: Downloaded."
