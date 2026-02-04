@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
-#
-# This script is for quickly generate helpful info
-#
-# It should be as independent as possible and should not source other files unless it has to
-#
-# TODO: How to get the Qt version which Quickshell was built against?
 
 STY_RED='\e[31m'
 STY_RST='\e[00m'
@@ -21,9 +15,6 @@ x() { _exec "$@" 2>&1 | tee -a $output_file ; }
 e() { _box "$@" | tee -a $output_file ; }
 _box() {
   length=$(echo "$1" | wc -L);total_width=$((length + 2))
-  #line=$(printf "═%.0s" $(seq 1 $total_width))
-  #border_up="╔${line}╗";border_down="╚${line}╝"
-  #border_vertical="║"
   line=$(printf "=%.0s" $(seq 1 $total_width))
   border_up="/${line}\\";border_down="\\${line}/"
   border_vertical="|"
@@ -71,7 +62,6 @@ x git submodule status --recursive
 e "Checking distro"
 x _check_distro_id
 x cat os-release
-#x _check_distro 
 
 e "Checking variables"
 x declare -p XDG_CACHE_HOME # ~/.cache
@@ -82,13 +72,6 @@ x declare -p ILLOGICAL_IMPULSE_VIRTUAL_ENV # $XDG_STATE_HOME/quickshell/.venv
 
 e "Checking directories/files"
 x ls -l ~/.local/state/quickshell/.venv
-
-#e "Checking command existence"
-#commands=(yay pacman zypper apt dnf yum)
-#commands+=(ags agsv1)
-#commands+=(Hyprland hypr{ctl,idle,lock,picker})
-#commands+=(uv)
-#for i in "${commands[@]}";do x command -v $i;done
 
 e "Checking versions"
 x Hyprland --version
@@ -105,8 +88,8 @@ echo "3. Only agree when necessary, typically when you are creating an issue and
 read -p "y=yes, n=no (default) ====> " p
 case $p in
   [yY]) echo "OK, uploading..."
-        curl -F'file=@diagnose.result' -Fexpires=360 https://0x0.st && \
-          echo "Uploaded. Please attach the URL above when asking for help."
-        ;;
+    curl -F'file=@diagnose.result' -Fexpires=360 https://0x0.st && \
+      echo "Uploaded. Please attach the URL above when asking for help."
+    ;;
   *) echo "Uploading aborted.";;
 esac
