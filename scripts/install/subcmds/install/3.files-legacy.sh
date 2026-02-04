@@ -34,6 +34,12 @@ case "${SKIP_FISH}" in
     ;;
 esac
 
+case "${SKIP_SCRIPTS}" in
+  true) sleep 0;;
+  *)
+    install_dir__sync scripts/bin "/usr/local/bin"
+esac
+
 case "${SKIP_FONTCONFIG}" in
   true) sleep 0;;
   *)
