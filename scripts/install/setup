@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "$0")"
-REPO_ROOT="$(pwd)"
+REPO_ROOT="$(pwd)/../../"
 
 source ./scripts/install/lib/envs.sh
 source ./scripts/install/lib/funcs.sh
