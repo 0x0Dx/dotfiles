@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>【 end_4's Hyprland dotfiles 】</h1>
+    <h1>【 0x0D's dotfiles 】</h1>
     <h3></h3>
 </div>
 
@@ -98,7 +98,7 @@ Widget system: Quickshell | Support: Yes
 - If you would like to give me some milk😳 (i dont drink coffee): https://github.com/sponsors/end-4
 - Virtual tentacle cat website points chart
 
-[![Stargazers over time](https://starchart.cc/end-4/dots-hyprland.svg?variant=adaptive)](https://starchart.cc/end-4/dots-hyprland)
+[![Stargazers over time](https://starchart.cc/0x0Dx/dotfiles.svg?variant=adaptive)](https://starchart.cc/0x0Dx/dotfiles)
 
 
 <div align="center">
