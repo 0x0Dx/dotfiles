@@ -5,6 +5,8 @@ import qs.modules.common
 import qs.modules.common.widgets
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls
+import QtQuick.Window
 
 Item {
     id: root
@@ -12,7 +14,7 @@ Item {
     property real spacing: 20
     property real titleSpacing: 7
     property real padding: 4
-    implicitWidth: row.implicitWidth + padding * 2
+    implicitWidth: Math.min(row.implicitWidth + padding * 2, Screen.width * 0.8)
     implicitHeight: row.implicitHeight + padding * 2
     // Excellent symbol explaination and source :
     // http://xahlee.info/comp/unicode_computing_symbols.html
