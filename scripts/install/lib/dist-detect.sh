@@ -1,5 +1,4 @@
-# This script is meant to be sourced.
-# It's not for directly running.
+# shellcheck disable=SC2148
 function print_os_group_id(){
     printf "${STY_CYAN}"
     printf "===INFO===\n"

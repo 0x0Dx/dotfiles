@@ -1,10 +1,4 @@
-# This script depends on `functions.sh' .
-# This script is not for direct execution, instead it should be sourced by other script. It does not need execution permission or shebang.
-
-# shellcheck shell=bash
-
-# This file is provided for any distros, mainly non-Arch(based) distros.
-
+# shellcheck disable=SC2148
 install-Rubik(){
   x mkdir -p $REPO_ROOT/cache/Rubik
   x cd $REPO_ROOT/cache/Rubik
