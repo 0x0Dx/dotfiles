@@ -1,7 +1,7 @@
 # Online script for install dots-hyprland.
 #
 # By design this script is for running via piping to bash:
-#   bash <(curl -s https://raw.githubusercontent.com/0x0Dx/dotfiles/refs/heads/master/get) [parameters]
+#   bash <(curl -s https://raw.githubusercontent.com/0x0Dx/dotfiles/refs/heads/master/scripts/install/get) [parameters]
 # Therefore shebang and execute permission are not needed.
 #
 # When running locally for testing, run
@@ -139,5 +139,5 @@ fi
  x git pull origin master && git submodule update --init --recursive
  x git branch --set-upstream-to=origin/master master
 echo "$me: Downloaded."
-echo "$me: Running \"./setup install\"."
-x ./setup install "$@" || { echo "$me: Error occured when running \"./setup install\"."; exit 1 ; }
+echo "$me: Running \"./scripts/install/setup install\"."
+x ./scripts/install/setup install "$@" || { echo "$me: Error occured when running \"./scripts/install/setup install\"."; exit 1 ; }
