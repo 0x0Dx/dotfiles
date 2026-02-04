@@ -1,4 +1,4 @@
-# This is NOT a script for execution, but for loading functions, so NOT need execution permission or shebang.
+# shellcheck disable=SC2148
 XDG_BIN_HOME=${XDG_BIN_HOME:-$HOME/.local/bin}
 XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
@@ -11,6 +11,7 @@ STY_YELLOW='\e[33m'
 STY_BLUE='\e[34m'
 STY_PURPLE='\e[35m'
 STY_CYAN='\e[36m'
+STY_WHITE='\e[37m'
 
 STY_BOLD='\e[1m'
 STY_FAINT='\e[2m'
@@ -24,7 +25,7 @@ STY_RST='\e[00m'
 declare -a TEMP_FILES_TO_CLEANUP=()
 
 # Used by install script
-BACKUP_DIR="${BACKUP_DIR:-$HOME/ii-original-dots-backup}"
-DOTS_CORE_CONFDIR="${XDG_CONFIG_HOME}/illogical-impulse"
+BACKUP_DIR="${BACKUP_DIR:-$HOME/daifuku-backup}"
+DOTS_CORE_CONFDIR="${XDG_CONFIG_HOME}/daifuku"
 INSTALLED_LISTFILE="${DOTS_CORE_CONFDIR}/installed_listfile"
 FIRSTRUN_FILE="${DOTS_CORE_CONFDIR}/installed_true"

@@ -3,7 +3,7 @@
 cd "$(dirname "$0")"
 REPO_ROOT="$(pwd)"
 
-source ./sdata/lib/environment-variables.sh
+source ./scripts/install/lib/envs.sh
 source ./sdata/lib/functions.sh
 source ./sdata/lib/package-installers.sh
 source ./sdata/lib/dist-determine.sh
