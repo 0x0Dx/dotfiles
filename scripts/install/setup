@@ -52,12 +52,12 @@ case $1 in
   # Correct subcommand
   install|uninstall|exp-update|exp-merge|resetfirstrun|checkdeps|virtmon)
     SUBCMD_NAME=$1
-    SUBCMD_DIR=./sdata/subcmd-$1
+    SUBCMD_DIR=../../sdata/subcmd-$1
     shift;;
   # Correct subcommand but not using ./sdata/subcmd-$1
   install-deps|install-setups|install-files)
     SUBCMD_NAME=$1
-    SUBCMD_DIR=./sdata/subcmd-install
+    SUBCMD_DIR=../../sdata/subcmd-install
     shift;;
   # Wrong subcommand
   *)printf "${STY_RED}Unknown subcommand \"$1\".${STY_RST}\n";showhelp_global;exit 1;;
