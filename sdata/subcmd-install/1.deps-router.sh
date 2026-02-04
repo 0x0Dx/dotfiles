@@ -48,25 +48,25 @@ if [[ "$INSTALL_VIA_NIX" == "true" ]]; then
   TARGET_ID=nix
   printf "${STY_YELLOW}"
   printf "===WARNING===\n"
-  printf "./sdata/dist-${TARGET_ID}/install-deps.sh will be used.\n"
+  printf "./scripts/install/distros/${TARGET_ID}/install-deps.sh will be used.\n"
   printf "The process is still WIP.\n"
   printf "Proceed only at your own risk.\n"
   printf "\n"
   printf "${STY_RST}"
   pause
-  source ./sdata/dist-${TARGET_ID}/install-deps.sh
+  source ./scripts/install/distros/${TARGET_ID}/install-deps.sh
 
 elif [[ "$OS_GROUP_ID" =~ ^(arch|gentoo|fedora)$ ]]; then
 
   TARGET_ID=$OS_GROUP_ID
   if ! [[ "${TARGET_ID}" = "arch" ]]; then
-    tmp_update_status="$(outdate_detect sdata/dist-arch sdata/dist-${TARGET_ID})"
+    tmp_update_status="$(outdate_detect scripts/install/distros/arch scripts/install/distros/${TARGET_ID})"
     if [[ "${tmp_update_status}" =~ ^(OUTDATED|EMPTY_TARGET|EMPTY_SOURCE|FORCE_OUTDATED|WIP)$ ]]; then
       printf "${STY_RED}${STY_BOLD}===URGENT===${STY_RST}\n"
       printf "${STY_RED}"
       printf "Status code: ${tmp_update_status}\n"
-      printf "The community provided ./sdata/dist-${TARGET_ID}/ seems to be outdated,\n"
-      printf "which means it probably does not reflect all latest changes of ./sdata/dist-arch/ .\n"
+      printf "The community provided ./scripts/install/distros/${TARGET_ID}/ seems to be outdated,\n"
+      printf "which means it probably does not reflect all latest changes of ./scripts/install/distros/arch/ .\n"
       printf "In such case it may work unexpectedly.${STY_RST}\n"
       printf "\n"
       printf "${STY_RED}It's highly recommended to check the following links before continue.${STY_RST}\n"
@@ -74,17 +74,17 @@ elif [[ "$OS_GROUP_ID" =~ ^(arch|gentoo|fedora)$ ]]; then
       printf "   ${STY_UNDERLINE}https://github.com/end-4/dots-hyprland/discussions/2140${STY_RST}\n"
       printf "   ${STY_RED}Note that the timeliness relies on manual maintenance.${STY_RST}\n"
       printf "${STY_RED}2. For details please compare the two lists of commit history:${STY_RST}\n"
-      printf "   ${STY_UNDERLINE}https://github.com/end-4/dots-hyprland/commits/main/sdata/dist-arch${STY_RST}\n"
-      printf "   ${STY_UNDERLINE}https://github.com/end-4/dots-hyprland/commits/main/sdata/dist-${TARGET_ID}${STY_RST}\n"
+      printf "   ${STY_UNDERLINE}https://github.com/0x0Dx/dotfiles/commits/main/scripts/install/distros/arch${STY_RST}\n"
+      printf "   ${STY_UNDERLINE}https://github.com/0x0Dx/dotfiles/commits/main/scripts/install/distros/${TARGET_ID}${STY_RST}\n"
       printf "\n"
-      printf "${STY_PURPLE}PR on ./sdata/dist-${TARGET_ID}/ to properly reflect the latest changes of ./sdata/dist-arch is welcomed.${STY_RST}\n"
+      printf "${STY_PURPLE}PR on ./scripts/install/distros/${TARGET_ID}/ to properly reflect the latest changes of ./scripts/install/distros/arch is welcomed.${STY_RST}\n"
       printf "${STY_PURPLE}${STY_BOLD}Again, do not create any issue,${STY_RST}\n"
       printf "${STY_PURPLE}but you can create a discussion under \"Extra Distros\" category: ${STY_RST}\n"
       printf "${STY_PURPLE}${STY_UNDERLINE}https://github.com/end-4/dots-hyprland/discussions/new?category=extra-distros${STY_RST}\n"
       printf "\n"
       if [[ "${tmp_update_status}" = "OUTDATED" ]]; then
         printf "${STY_RED}NOTE: The conclusion above is determined automatically by comparing latest Git commit time,\n"
-        printf "however sometimes the changes on \"dist-arch\" are actually not needed for \"dist-${TARGET_ID}\",\n"
+        printf "however sometimes the changes on \"distros/arch\" are actually not needed for \"distros/${TARGET_ID}\",\n"
         printf "in such case you should just ignore it and continue.\n"
         printf "${STY_RST}\n"
       fi
@@ -103,6 +103,6 @@ elif [[ "$OS_GROUP_ID" =~ ^(arch|gentoo|fedora)$ ]]; then
       fi
     fi
   fi
-  printf "./sdata/dist-${TARGET_ID}/install-deps.sh will be used.\n"
-  source ./sdata/dist-${TARGET_ID}/install-deps.sh
+  printf "./scripts/install/distros/${TARGET_ID}/install-deps.sh will be used.\n"
+  source ./scripts/install/distros/${TARGET_ID}/install-deps.sh
 fi

@@ -1,0 +1,11 @@
+pkgname=daifuku-backlight
+pkgver=1.0
+pkgrel=1
+pkgdesc='Daifuku Backlight Dependencies'
+arch=(any)
+license=(None)
+depends=(
+  geoclue
+  brightnessctl
+  ddcutil
+)

@@ -1,0 +1,11 @@
+pkgname=daifuku-hyprland
+pkgver=1.0
+pkgrel=4
+pkgdesc='Daifuku Hyprland relatated packages'
+arch=(any)
+license=(None)
+depends=(
+  hyprland
+  hyprsunset
+  wl-clipboard
+)

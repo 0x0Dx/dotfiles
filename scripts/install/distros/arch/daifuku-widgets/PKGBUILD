@@ -1,0 +1,18 @@
+pkgname=daifuku-widgets
+pkgver=1.0
+pkgrel=6
+pkgdesc='Daifuku Widget Dependencies'
+arch=(any)
+license=(None)
+depends=(
+  fuzzel
+  glib2
+  imagemagick
+  hypridle
+  hyprlock
+  hyprpicker
+  songrec
+  translate-shell
+  wlogout
+  libqalculate
+)

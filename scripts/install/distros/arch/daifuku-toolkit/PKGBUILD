@@ -1,0 +1,11 @@
+pkgname=daifuku-toolkit
+pkgver=1.0
+pkgrel=2
+pkgdesc='Daifuku Toolkit Dependencies'
+arch=(any)
+license=(None)
+depends=(
+  upower
+  wtype
+  ydotool
+)
