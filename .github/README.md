@@ -27,15 +27,15 @@
 <details> 
   <summary>Installation (illogical-impulse Quickshell)</summary>
 
-    - _If you're new to Linux and decide to use Hyprland, you're in for a tough ride._
-    - Just run `bash <(curl -s https://raw.githubusercontent.com/0x0Dx/dotfiles/refs/heads/master/get)`
-      - Or, clone this repo and run `./setup install`
-      - See [document](https://ii.clsty.link/en/ii-qs/01setup/) for details.
-    - **Default keybinds**: Should be somewhat familiar to Windows or GNOME users. Important ones:
-      - `Super`+`/` = keybind list
-      - `Super`+`Enter` = terminal
-      - If for whatever reason the keybind list widget does not work, here's an image:
-      <img width="1412" height="828" alt="image" src="https://github.com/user-attachments/assets/8f7bd216-9e03-47e3-8709-0008772a4133" />
+  - _If you're new to Linux and decide to use Hyprland, you're in for a tough ride._
+  - Just run `bash <(curl -s https://raw.githubusercontent.com/0x0Dx/dotfiles/refs/heads/master/get)`
+    - Or, clone this repo and run `./setup install`
+    - See [document](https://ii.clsty.link/en/ii-qs/01setup/) for details.
+   - **Default keybinds**: Should be somewhat familiar to Windows or GNOME users. Important ones:
+    - `Super`+`/` = keybind list
+    - `Super`+`Enter` = terminal
+    - If for whatever reason the keybind list widget does not work, here's an image:
+    <img width="1412" height="828" alt="image" src="https://github.com/user-attachments/assets/8f7bd216-9e03-47e3-8709-0008772a4133" />
 
 </details>
 
