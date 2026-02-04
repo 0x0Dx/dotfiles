@@ -201,8 +201,8 @@ v auto_update_git_submodule
 if [[ ! "${SKIP_BACKUP}" == true ]]; then auto_backup_configs; fi
 
 case "${EXPERIMENTAL_FILES_SCRIPT}" in
-  true)source sdata/subcmd-install/3.files-exp.sh;;
-  *)source sdata/subcmd-install/3.files-legacy.sh;;
+  true)source scripts/install/subcmds/install/3.files-exp.sh;;
+  *)source scripts/install/subcmds/install/3.files-legacy.sh;;
 esac
 
 if [[ ! "$OS_GROUP_ID" == "fedora" ]]; then

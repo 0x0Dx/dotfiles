@@ -17,11 +17,11 @@
 # TODO: Update help and doc about `--exp-files` and the yaml config, including the possible values of mode.
 #
 # Stage 3 todos:
-# TODO: Implement user-define yaml with merging (override) ability for user who only wants little customization and is satisfied with most of the defaults. User can use `./install-files.yaml` as custom config. When `./install-files.yaml` exists and have correct major version number, merge it together with `sdata/step/3.install-files.yaml` to generate a `cache/install-files.final.yaml` to determine how to copy files. About how to merge two yaml files, I know some software such as rime input method and docker supports a override yaml config, which we may reference from. See also https://github.com/mikefarah/yq/discussions/1437
+# TODO: Implement user-define yaml with merging (override) ability for user who only wants little customization and is satisfied with most of the defaults. User can use `./install-files.yaml` as custom config. When `./install-files.yaml` exists and have correct major version number, merge it together with `scripts/install/subcmds/install/3.install-files.yaml` to generate a `cache/install-files.final.yaml` to determine how to copy files. About how to merge two yaml files, I know some software such as rime input method and docker supports a override yaml config, which we may reference from. See also https://github.com/mikefarah/yq/discussions/1437
 # TODO: Implement variants like keybindings, terminals, etc under user_preferences.
 
 # Configuration file
-CONFIG_FILE="sdata/subcmd-install/3.files-exp.yaml"
+CONFIG_FILE="scripts/install/subcmds/install/3.files-exp.yaml"
 
 # =============================================================================
 wizard_update_preferences() {

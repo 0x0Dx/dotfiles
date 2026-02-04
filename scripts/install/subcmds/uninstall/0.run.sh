@@ -134,8 +134,8 @@ v sudo rm /etc/modules-load.d/i2c-dev.conf
 
 printf "${STY_CYAN}Undo install step 1...\n${STY_RST}"
 
-if test -f sdata/dist-$OS_GROUP_ID/uninstall-deps.sh; then
-  source sdata/dist-$OS_GROUP_ID/uninstall-deps.sh
+if test -f scripts/install/distros/$OS_GROUP_ID/uninstall-deps.sh; then
+  source scripts/install/distros/$OS_GROUP_ID/uninstall-deps.sh
 else
   printf "${STY_YELLOW}Automatic depedencies uninstallation is not yet avaible for your distro. Skipping...${STY_RST}\n"
 fi

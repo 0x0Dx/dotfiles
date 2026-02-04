@@ -1,15 +1,15 @@
 This file contains information about the dependencies.
 
-It mainly describes about `sdata/dist-arch` which is actively maintained by the devs.
+It mainly describes about `./scripts/install/distros/arch` which is actively maintained by the devs.
 
 Tips:
-- The packages which name has prefix `illogical-impulse-` are defined with local files `PKGBUILD`. There're two types:
+- The packages which name has prefix `daifuku-` are defined with local files `PKGBUILD`. There're two types:
   - **Meta packages**, which do not have actual content but only include other packages specified in the array `depends`.
   - **Actual packages**, which not only install dependencies listed in `depends`, but also build packages which have actual content to be installed later.
-- For each package included in the local `PKGBUILD`s which name does **not** have prefix `illogical-impulse-`, for example `rsync`, it's either from [Arch Linux Packages](https://archlinux.org/packages) or the [AUR](https://aur.archlinux.org/packages). Search the package name on them to get the info (e.g. what executable(s) the package provides).
+- For each package included in the local `PKGBUILD`s which name does **not** have prefix `daifuku-`, for example `rsync`, it's either from [Arch Linux Packages](https://archlinux.org/packages) or the [AUR](https://aur.archlinux.org/packages). Search the package name on them to get the info (e.g. what executable(s) the package provides).
 
 # Meta packages
-## illogical-impulse-audio
+## daifuku-audio
 - `cava`
   - Used in Quickshell config.
 - `pavucontrol-qt`
@@ -23,7 +23,7 @@ Tips:
 - `playerctl`
   - Used in Hyprland and Quickshell config.
 
-## illogical-impulse-backlight
+## daifuku-backlight
 - `geoclue`
   - Which demo agent used in Quickshell config.
 - `brightnessctl`
@@ -31,9 +31,9 @@ Tips:
 - `ddcutil`
   - Used in Quickshell config.
 
-## illogical-impulse-basic
+## daifuku-basic
 - `bc`
-  - Used in `quickshell/ii/scripts/colors/switchwall.sh` for example.
+  - Used in `quickshell/scripts/colors/switchwall.sh` for example.
 - `coreutils`
   - Too many executables involved, not sure where been used.
 - `cliphist`
@@ -55,7 +55,7 @@ Tips:
 - `go-yq`
   - Used in install script.
 
-## illogical-impulse-fonts-themes
+## daifuku-fonts-themes
 - `adw-gtk-theme-git`
   - [source](https://github.com/lassekongo83/adw-gtk3)
   - Used in Quickshell config.
@@ -96,7 +96,7 @@ Tips:
 - `ttf-twemoji`
   - Not explicitly used, but it may help as fallback for displaying emoji characters.
 
-## illogical-impulse-hyprland
+## daifuku-hyprland
 - `hyprland`
   - Surely needed.
 - `hyprsunset`
@@ -104,7 +104,7 @@ Tips:
 - `wl-clipboard`
   - Surely needed.
 
-## illogical-impulse-kde
+## daifuku-kde
 - `bluedevil`
   - Provide command `kcmshell6 kcm_bluetooth` used by Quickshell bluetooth functionality.
 - `gnome-keyring`
@@ -121,7 +121,7 @@ Tips:
   - Used in Hyprland `keybinds.conf`.
 
 
-## illogical-impulse-portal
+## daifuku-portal
 - `xdg-desktop-portal`
   - Basic component.
 - `xdg-desktop-portal-kde`
@@ -131,7 +131,7 @@ Tips:
 - `xdg-desktop-portal-hyprland`
   - Basic component.
 
-## illogical-impulse-python
+## daifuku-python
 - `clang`
   - Some python package may need this to be built, e.g. #1235. This may varies on different distros though.
 - `uv`
@@ -147,7 +147,7 @@ Tips:
 - `gobject-introspection`
   - Not explicitly used.
 
-## illogical-impulse-screencapture
+## daifuku-screencapture
 - `hyprshot`
   - Used in Hyprland `keybinds.conf` as fallback.
 - `slurp`
@@ -162,7 +162,7 @@ Tips:
   - Used in Quickshell config.
 
 
-## illogical-impulse-toolkit
+## daifuku-toolkit
 - `upower`
   - Used in Quickshell config.
 - `wtype`
@@ -170,7 +170,7 @@ Tips:
 - `ydotool`
   - Used in Quickshell config.
 
-## illogical-impulse-widgets
+## daifuku-widgets
 - `fuzzel`
   - Used in Hyprland and Quickshell config; its config is also included.
 - `glib2`
@@ -197,9 +197,9 @@ Tips:
 
 
 # Actual packages
-## illogical-impulse-quickshell-git
+## daifuku-quickshell-git
 - Pinned commit.
-- Also with extra dependencies (mainly Qt things) needed by the illogical-impulse Quickshell config.
+- Also with extra dependencies (mainly Qt things) needed by the Daifuku Quickshell config.
 
 Extra dependencies.
 - `qt6-base`
@@ -220,14 +220,14 @@ Extra dependencies.
 - `kdialog`
 - `syntax-highlighting`
 
-## illogical-impulse-bibata-modern-classic-bin
+## daifuku-bibata-modern-classic-bin
 - [source](https://github.com/ful1e5/Bibata_Cursor)
 - Used in Hyprland config, not necessary.
 
-## illogical-impulse-microtex-git
+## daifuku-microtex-git
 - [source](https://github.com/NanoMichael/MicroTeX)
 - This package will be installed as `/opt/MicroTeX`.
 
-## illogical-impulse-oneui4-icons-git
+## daifuku-oneui4-icons-git
 - [source](https://github.com/end-4/OneUI4-Icons)
 - Customed version of normal oneui4-icons.
