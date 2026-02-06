@@ -2,7 +2,7 @@
 
 %bcond_with         asan
 
-%global commit      db1777c20b936a86528c1095cbcb1ebd92801402
+%global commit      191085a8821b35680bba16ce5411fc9dbe912237
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global commits     699
 %global snapdate    20251030
