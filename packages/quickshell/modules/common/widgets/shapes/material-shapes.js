@@ -667,7 +667,7 @@ class PointNRound {
     }
 }
 
-function doRepeat(points, reps, center, mirroring) {
+function doRepeat(points, reps = 1, center, mirroring) {
     if (mirroring) {
         const result = [];
         const angles = points.map(p => p.o.minus(center).angleDegrees());
